@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../../public/assets/css/style.css"
+		type="text/css" />
+	<title>Eat-Da-Burger!</title>
+	<script src="https://code.jquery.com/jquery.js"></script>
+
+</head>
+
+<body>
+	{{{ body }}}
+</body>
+
+<script>
+	$(document).ready(function () {
+		$(".form").on("submit", function (event) {
+			// Make sure to preventDefault on a submit event.
+			event.preventDefault();
+
+			burgerOrder = {
+				name: $("#order").val().trim(),
+				devoured: false
+			};
+			console.log(burgerOrder)
+
+			// Send the POST request.
+			$.ajax("/api/burgers", {
+				type: "POST",
+				data: burgerOrder
+			}).then(
+				
+				function () {
+						console.log(burgerOrder)
+					console.log("burger order made");
+					// Reload the page to get the updated list
+					location.reload();
+				}
+			);
+		});
+
+		$(".move").on("click", function (event) {
+			var id = $(this).data("id");
+
+			// Send the POST request.
+			$.ajax("/api/burgers/" + id, {
+				type: "PUT",
+				data: {
+					devoured: true
+				}
+			}).then(
+				function () {
+					console.log("devoured burger", id);
+					// Reload the page to get the updated list
+					location.reload();
+				}
+			);
+		});
+	});
+</script>
+
+</html>
