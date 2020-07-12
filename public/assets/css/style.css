@@ -1,8 +1,23 @@
 body {
-  background: #f8e6cf;
+  background-color: linen;
 }
 
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  border-radius: 50%;
+}
+
+h1 {
+  color: maroon;
+  margin-left: 40px;
+  text-align: center;
+} 
+
 .container {
+  text-align: center;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
@@ -16,11 +31,14 @@ body {
 li {
   padding: 5px;
   margin: 5px;
-  background: #f8e6cf;
+  background: #f8d9af;
 }
 
 .form {
+  text-align: center;
   margin: auto;
   width: 50%;
   padding: 10px;
 }
+
+
