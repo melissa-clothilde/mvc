@@ -17,4 +17,5 @@ WHEN I click the “Devour it!” button
 THEN I am presented with a new list of devoured burgers in a right-hand column 
 
 The following image demonstrates the application functionality:
+
 ![Image of application](/screenShot.png)
